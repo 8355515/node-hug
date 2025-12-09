@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hope Foundation - Spreading Kindness</title>
+  <title>阳光慈善基金会 - 汇聚善意 传递希望</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -50,8 +50,8 @@
     }
 
     .hero-content { max-width: 800px; margin: 0 auto; }
-    .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-    .hero p { font-size: 1.3rem; margin-bottom: 2rem; }
+    .hero h1 { font-size: 3.2rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
     .btn {
       display:inline-block; background-color: var(--accent); color: var(--white);
       padding:0.8rem 2rem; border-radius:50px; text-decoration:none; font-weight:600;
@@ -62,14 +62,18 @@
 
     section { padding: 5rem 0; }
     .section-title { text-align:center; margin-bottom:3rem; }
-    .section-title h2 { font-size:2.5rem; color:var(--primary); margin-bottom:1rem; position:relative; display:inline-block; }
+    .section-title h2 { font-size:2.3rem; color:var(--primary); margin-bottom:1rem; position:relative; display:inline-block; }
     .section-title h2::after {
       content:''; position:absolute; bottom:-10px; left:50%; transform:translateX(-50%);
       width:80px; height:4px; background-color:var(--accent); border-radius:2px;
     }
 
+    .section-title p { max-width: 700px; margin: 0 auto; color: var(--text); }
+
     .about-content { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
     .about-img img { width:100%; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.1); }
+
+    .about-text p { margin-bottom: 1rem; }
 
     .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3rem; }
     .stat-item {
@@ -94,7 +98,9 @@
       background: linear-gradient(to right, var(--primary), var(--secondary));
       color: var(--white); text-align:center; padding:5rem 0;
     }
-    .cta h2 { font-size:2.5rem; margin-bottom:1.5rem; }
+    .cta h2 { font-size:2.3rem; margin-bottom:1.5rem; }
+    .cta p { max-width: 700px; margin: 0 auto 2rem; }
+
     .cta .btn { background-color: var(--white); color: var(--primary); }
     .cta .btn:hover { background-color: var(--accent); color: var(--white); }
 
@@ -104,19 +110,29 @@
     .footer-content {
       display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; margin-bottom:2rem;
     }
-    .footer-column h3 { font-size:1.3rem; margin-bottom:1rem; position:relative; }
+    .footer-column h3 { font-size:1.2rem; margin-bottom:1rem; position:relative; }
     .footer-column h3::after {
       content:''; position:absolute; bottom:-5px; left:0; width:40px; height:2px; background-color:var(--accent);
     }
     .footer-links { list-style:none; }
     .footer-links li { margin-bottom:0.5rem; }
-    .footer-links li a { color:var(--light); text-decoration:none; }
+    .footer-links li a { color:var(--light); text-decoration:none; font-size:0.95rem; }
     .footer-links li a:hover { color:var(--accent); }
 
-    .copyright { text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:1rem; }
+    .social-links a {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.1);
+      color:#fff; margin-right:8px; text-decoration:none; font-size:0.9rem;
+    }
+    .social-links a:hover { background:var(--accent); }
+
+    .copyright { text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:1rem; font-size: 0.9rem; }
+    .icp { margin-top: 0.3rem; opacity: 0.8; }
 
     @media (max-width: 768px) {
       .about-content, .projects-grid, .footer-content { grid-template-columns:1fr; }
+      .hero { height:auto; padding:4rem 0; }
+      .hero h1 { font-size: 2.4rem; }
     }
   </style>
 </head>
@@ -125,129 +141,155 @@
     <div class="container nav-container">
       <div class="logo">
         <i class="fas fa-hand-holding-heart"></i>
-        <span>Hope Foundation</span>
+        <span>阳光慈善基金会</span>
       </div>
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#donate">Donate</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home">首页</a></li>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#projects">慈善项目</a></li>
+          <li><a href="#donate">爱心捐赠</a></li>
+          <li><a href="#contact">联系我们</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- 顶部横幅 -->
   <section class="hero" id="home">
     <div class="container hero-content">
-      <h1>Together We Can Make a Difference</h1>
-      <p>Join our mission to support children, families, and communities in need around the world.</p>
-      <a href="#donate" class="btn">Make a Donation</a>
+      <h1>汇聚点滴善意，托起生活希望</h1>
+      <p>阳光慈善基金会专注于困难家庭帮扶、困境儿童救助、重大疾病救助等领域，让更多需要帮助的人，得到及时、真实、有效的支持。</p>
+      <a href="#donate" class="btn">立即参与捐赠</a>
     </div>
   </section>
 
+  <!-- 关于我们 -->
   <section id="about">
     <div class="container">
       <div class="section-title">
-        <h2>About Hope Foundation</h2>
-        <p>We are a non-profit organization dedicated to helping those in need through education, healthcare, and humanitarian aid.</p>
+        <h2>关于阳光慈善基金会</h2>
+        <p>阳光慈善基金会是在国内依法登记备案的公益慈善组织，秉持“公开透明、专业高效、长期陪伴”的原则，面向全国开展多领域慈善项目。</p>
       </div>
       <div class="about-content">
         <div class="about-img">
-          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=2070&q=80" alt="Helping hands">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=2070&q=80" alt="志愿者伸出援手">
         </div>
         <div class="about-text">
-          <p>Since 2005, Hope Foundation has provided assistance to over 2 million people worldwide, supporting local communities and empowering individuals through education and sustainable programs.</p>
-          <a href="#projects" class="btn">View Our Work</a>
+          <p>自成立以来，我们携手政府部门、企事业单位、社会组织及广大爱心人士，围绕“教育扶助、医疗救助、生活救助、乡村振兴”等方向，持续推进多元化慈善项目。</p>
+          <p>基金会通过线上募捐平台、线下定向募捐、企业合作等方式筹集善款，并严格按照相关法律法规进行管理与使用，定期向社会公开信息接受监督。</p>
+          <p>每一笔善款都有去向可查，每一份爱心都将被妥善使用，让慈善在阳光下运行，让信任成为连接彼此的桥梁。</p>
+          <a href="#projects" class="btn">了解重点项目</a>
         </div>
       </div>
       <div class="stats">
-        <div class="stat-item"><i class="fas fa-donate"></i><h3>$5M+</h3><p>Funds Raised</p></div>
-        <div class="stat-item"><i class="fas fa-users"></i><h3>12,000+</h3><p>Volunteers</p></div>
-        <div class="stat-item"><i class="fas fa-child"></i><h3>80,000+</h3><p>Children Helped</p></div>
+        <div class="stat-item">
+          <i class="fas fa-donate"></i>
+          <h3>￥50,000,000+</h3>
+          <p>累计募集善款</p>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-users"></i>
+          <h3>15,000+</h3>
+          <p>登记志愿者</p>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-child"></i>
+          <h3>100,000+</h3>
+          <p>受助人次</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- 慈善项目 -->
   <section id="projects">
     <div class="container">
       <div class="section-title">
-        <h2>Our Key Projects</h2>
-        <p>From education to disaster relief, we focus on sustainable and impactful programs.</p>
+        <h2>重点慈善项目</h2>
+        <p>围绕国家乡村振兴战略和民生需求，聚焦教育、医疗、救助等方面，开展一系列具有持续影响力的公益项目。</p>
       </div>
       <div class="projects-grid">
         <div class="project-card">
-          <div class="project-img"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80" alt=""></div>
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80" alt="助学成长计划">
+          </div>
           <div class="project-content">
-            <h3>Child Education Program</h3>
-            <p>Providing access to quality education and learning materials for underprivileged children worldwide.</p>
+            <h3>阳光助学成长计划</h3>
+            <p>面向经济困难家庭学生，提供助学金、学习物资及心理陪伴服务，帮助他们顺利完成学业，树立自信与梦想。</p>
           </div>
         </div>
         <div class="project-card">
-          <div class="project-img"><img src="https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=800&q=80" alt=""></div>
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=800&q=80" alt="医疗救助项目">
+          </div>
           <div class="project-content">
-            <h3>Disaster Relief</h3>
-            <p>Offering emergency aid, food, and shelter to communities affected by natural disasters.</p>
+            <h3>重大疾病医疗救助</h3>
+            <p>针对患有重大疾病且家庭经济困难的患者，提供医疗费用补助，协助协调社会资源，为其争取更多治疗机会。</p>
           </div>
         </div>
         <div class="project-card">
-          <div class="project-img"><img src="https://images.unsplash.com/photo-1542621334-7966c9e0c55f?auto=format&fit=crop&w=800&q=80" alt=""></div>
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1542621334-7966c9e0c55f?auto=format&fit=crop&w=800&q=80" alt="乡村关爱计划">
+          </div>
           <div class="project-content">
-            <h3>Healthcare for All</h3>
-            <p>Delivering essential medical services and supplies to remote and underserved regions.</p>
+            <h3>乡村关爱与振兴计划</h3>
+            <p>在中西部及偏远乡村地区，开展物资帮扶、基础设施改善、关爱留守儿童和独居老人的定期探访服务。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- 捐赠 CTA -->
   <section class="cta" id="donate">
     <div class="container">
-      <h2>Your Support Changes Lives</h2>
-      <p>Every donation brings hope to someone in need. Join us in building a brighter, kinder world.</p>
-      <a href="#" class="btn">Donate Now</a>
+      <h2>您的每一份善意，都将被认真对待</h2>
+      <p>无论是10元、100元，还是一次转发分享，都是对困境家庭与孩子最真诚的支持。我们将通过官方渠道定期公布善款使用明细，让爱心公开透明。</p>
+      <a href="#" class="btn">查看捐赠方式（微信/支付宝）</a>
     </div>
   </section>
 
+  <!-- 底部 -->
   <footer id="contact">
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>Hope Foundation</h3>
-          <p>Bringing hope, love, and opportunity to every corner of the world.</p>
+          <h3>阳光慈善基金会</h3>
+          <p>立足中国，面向全国，通过专业规范的慈善项目和服务，助力共同富裕与社会和谐。</p>
           <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-weixin"></i></a>
+            <a href="#"><i class="fab fa-weibo"></i></a>
+            <a href="#"><i class="fab fa-qq"></i></a>
           </div>
         </div>
         <div class="footer-column">
-          <h3>Quick Links</h3>
+          <h3>网站导航</h3>
           <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#donate">Donate</a></li>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#projects">慈善项目</a></li>
+            <li><a href="#donate">爱心捐赠</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h3>Get Involved</h3>
+          <h3>参与我们</h3>
           <ul class="footer-links">
-            <li><a href="#">Become a Volunteer</a></li>
-            <li><a href="#">Fundraise</a></li>
-            <li><a href="#">Corporate Giving</a></li>
+            <li><a href="#">申请成为志愿者</a></li>
+            <li><a href="#">企事业单位合作</a></li>
+            <li><a href="#">发起联合募捐</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h3>Contact Us</h3>
-          <p><i class="fas fa-map-marker-alt"></i> 123 Charity Street, New York, USA</p>
-          <p><i class="fas fa-phone"></i> +1 (800) 555-1234</p>
-          <p><i class="fas fa-envelope"></i> info@hopefoundation.org</p>
+          <h3>联系方式</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 北京市朝阳区 XXX 路 XX 号 阳光慈善大厦</p>
+          <p><i class="fas fa-phone"></i> 400-800-1234（工作日 9:00-18:00）</p>
+          <p><i class="fas fa-envelope"></i> service@ygcsfund.org</p>
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; <script>document.write(new Date().getFullYear());</script> Hope Foundation. All rights reserved.</p>
+        <p>&copy; <script>document.write(new Date().getFullYear());</script> 阳光慈善基金会 版权所有</p>
+        <p class="icp">备案号：京ICP备00000000号-1  |  公益性捐赠税前扣除资格单位（示例）</p>
       </div>
     </div>
   </footer>
